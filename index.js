@@ -12,7 +12,7 @@ let isHealthy = true;
 // health endpoint for docker container
 app.get('/health',(req,res) =>{
     if(isHealthy){
-        res.status(200).json({ status: 'ok })'});
+        res.status(200).json({ status: 'ok'});
     } else {
         res.status(500).json({ status: 'error'});
     }
