@@ -1,0 +1,26 @@
+{
+  "name": "mc-teams-light",
+  "version": "1.0.0",
+  "description": "A set of scripts to run in Docker that control a LIFX light based on your Microsoft Teams Status",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshKoiro/mc-teams-light.git"
+  },
+  "author": "JoshKoiro",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/JoshKoiro/mc-teams-light/issues"
+  },
+  "homepage": "https://github.com/JoshKoiro/mc-teams-light#readme",
+  "dependencies": {
+    "api": "^6.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}

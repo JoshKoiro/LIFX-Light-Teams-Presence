@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mc-teams-light:
+    image: mc-teams-light:latest
+    environment:
+      - GRAPH_API_KEY= # API key for MC Graph API
+      - LIFX_API_KEY= # LIFX API Key
+      - COLOR_CHANGE_SPEED=3 # In seconds
+      - LIGHT_BRIGHTNESS=0.5 # accepts values from 0 - 1
+      - AVAILABLE_COLOR=green # Refer to LIFX API for acceptable color definitions https://api.developer.lifx.com/reference/colors
+      - BUSY_COLOR=red
+      - DO_NOT_DISTURB_COLOR=red
+      - AWAY_COLOR=off # You may set a color of "off" which will set the power parameter to off rather than setting the color parameter
+      - BE_RIGHT_BACK_COLOR=yellow
+      - OFFLINE_COLOR=off
+      - REFRESH_RATE=10 # In seconds
