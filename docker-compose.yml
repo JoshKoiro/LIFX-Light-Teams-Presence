@@ -2,6 +2,8 @@ version: '3'
 services:
   mc-teams-light:
     image: lifx-light-teams-presence:latest
+    ports:
+      - 8085:3000 # Change the first port if port is already used on host machine
     environment:
       - GRAPH_API_KEY= # API key for MC Graph API
       - LIFX_API_KEY= # LIFX API Key
