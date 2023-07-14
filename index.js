@@ -1,8 +1,23 @@
+const express = require('express');
+const app = express();
 const { getStatus } = require('./msTeams.js');
 const { setReqObj, sendReq } = require('./Lifx.js');
 
 //allow us to use Environment variables from .env file or docker container
 require('dotenv').config();
+
+//setting default health status for /health endpoint
+let isHealthy = true;
+
+// health endpoint for docker container
+app.get('/health',(req,res) =>{
+    if(isHealthy){
+        res.status(200).json({ status: 'ok })'});
+    } else {
+        res.status(500).json({ status: 'error'});
+    }
+    
+})
 
 const checkStatus = () => {
 
@@ -51,6 +66,7 @@ const checkStatus = () => {
             console.log("Light is set to [" + currentColor + "]\n")
         })
         .catch(error => {
+            isHealthy = false;
             console.error('Error:', error);
             console.error("Could not connect to Teams API Endpoint. Most likey the access key is not valid...retrying")
           });
@@ -58,11 +74,19 @@ const checkStatus = () => {
     
 }
 
-//this runs the checkStatus function as soon as the code executes so there
-//is no delay after execution
-checkStatus()
+const port = 3000;
+app.listen(port, () => {
+    console.log(`\n🔧 application endpoints are accessable on port ${port}\n`);
+    console.log(`---------------------------------------------------`)
+    console.log(`🏥 /health: application HEALTHCHECK for Docker`)
+    console.log(`---------------------------------------------------\n`)
 
-// //main loop
-setInterval(checkStatus,
-    process.env.REFRESH_RATE * 1000
+    //this runs the checkStatus function as soon as the code executes so there
+    //is no delay after execution
+    checkStatus()
+
+    // //main loop
+    setInterval(checkStatus,
+        process.env.REFRESH_RATE * 1000
     )
+});
