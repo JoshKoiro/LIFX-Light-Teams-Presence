@@ -5,8 +5,8 @@ services:
     ports:
       - 8085:3000 # Change the first port if port is already used on host machine
     environment:
-      - GRAPH_API_KEY= # API key for MC Graph API
-      - LIFX_API_KEY= # LIFX API Key
+      - GRAPH_API_KEY=${GRAPH_API_KEY}
+      - LIFX_API_KEY=${LIFX_API_KEY}
       - COLOR_CHANGE_SPEED=3 # In seconds
       - LIGHT_BRIGHTNESS=0.5 # accepts values from 0 - 1
       - AVAILABLE_COLOR=green # Refer to LIFX API for acceptable color definitions https://api.developer.lifx.com/reference/colors
