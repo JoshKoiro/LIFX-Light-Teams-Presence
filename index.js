@@ -76,17 +76,17 @@ const checkStatus = () => {
 
 const port = 3000;
 app.listen(port, () => {
-console.log(`\n🔧 application endpoints are accessable on port ${port}\n`);
-console.log(`---------------------------------------------------`)
-console.log(`🏥 /health: application HEALTHCHECK for Docker`)
-console.log(`---------------------------------------------------\n`)
+    console.log(`\n🔧 application endpoints are accessable on port ${port}\n`);
+    console.log(`---------------------------------------------------`)
+    console.log(`🏥 /health: application HEALTHCHECK for Docker`)
+    console.log(`---------------------------------------------------\n`)
 
     //this runs the checkStatus function as soon as the code executes so there
-//is no delay after execution
-checkStatus()
+    //is no delay after execution
+    checkStatus()
 
-// //main loop
-setInterval(checkStatus,
-process.env.REFRESH_RATE * 1000
-)
+    // //main loop
+    setInterval(checkStatus,
+        process.env.REFRESH_RATE * 1000
+    )
 });
