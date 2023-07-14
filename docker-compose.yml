@@ -7,12 +7,12 @@ services:
     environment:
       - GRAPH_API_KEY=${GRAPH_API_KEY}
       - LIFX_API_KEY=${LIFX_API_KEY}
-      - COLOR_CHANGE_SPEED=3 # In seconds
-      - LIGHT_BRIGHTNESS=0.5 # accepts values from 0 - 1
-      - AVAILABLE_COLOR=green # Refer to LIFX API for acceptable color definitions https://api.developer.lifx.com/reference/colors
-      - BUSY_COLOR=red
-      - DO_NOT_DISTURB_COLOR=red
-      - AWAY_COLOR=off # You may set a color of "off" which will set the power parameter to off rather than setting the color parameter
-      - BE_RIGHT_BACK_COLOR=yellow
-      - OFFLINE_COLOR=off
-      - REFRESH_RATE=10 # In seconds
+      - COLOR_CHANGE_SPEED=${COLOR_CHANGE_SPEED} # In seconds
+      - LIGHT_BRIGHTNESS=${LIGHT_BRIGHTNESS} # accepts values from 0 - 1
+      - AVAILABLE_COLOR=${AVAILABLE_COLOR} # Refer to LIFX API for acceptable color definitions https://api.developer.lifx.com/reference/colors
+      - BUSY_COLOR=${BUSY_COLOR}
+      - DO_NOT_DISTURB_COLOR=${DO_NOT_DISTURB_COLOR}
+      - AWAY_COLOR=${AWAY_COLOR} # You may set a color of "off" which will set the power parameter to off rather than setting the color parameter
+      - BE_RIGHT_BACK_COLOR=${BE_RIGHT_BACK_COLOR}
+      - OFFLINE_COLOR=${OFFLINE_COLOR}
+      - REFRESH_RATE=${REFRESH_RATE} # In seconds
