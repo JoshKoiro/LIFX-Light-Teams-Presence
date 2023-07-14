@@ -49,7 +49,6 @@ const checkStatus = () => {
             }
             console.log("Teams status is [" + data.availability + "]") 
             console.log("Light is set to [" + currentColor + "]\n")
-1
         })
         .catch(error => {
             console.error('Error:', error);
