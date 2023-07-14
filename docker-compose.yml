@@ -1,7 +1,7 @@
 version: '3'
 services:
   mc-teams-light:
-    image: mc-teams-light:latest
+    image: lifx-light-teams-presence:latest
     environment:
       - GRAPH_API_KEY= # API key for MC Graph API
       - LIFX_API_KEY= # LIFX API Key
