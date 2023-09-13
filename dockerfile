@@ -16,7 +16,7 @@ EXPOSE 3000
 
 # Define the HEALTHCHECK instruction
 HEALTHCHECK --interval=10s --timeout=30s \
-CMD curl -f http://localhost:3000/health || exit 1
+CMD ["/app/healthcheck.sh"]
 
 # Set the name and tag for the image
 LABEL image.name="lifx-light-teams-presence"

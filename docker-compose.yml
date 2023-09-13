@@ -16,3 +16,5 @@ services:
       - BE_RIGHT_BACK_COLOR=${BE_RIGHT_BACK_COLOR}
       - OFFLINE_COLOR=${OFFLINE_COLOR}
       - REFRESH_RATE=${REFRESH_RATE} # In seconds
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
